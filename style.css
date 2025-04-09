@@ -51,6 +51,7 @@
     background: rgba(255,255,255,0.8);
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
+    text-align: center; /* Centratura dell'header */
   }
   
   /* DIVISIONE DELL'HEADER IN DUE RIGHE */
@@ -60,11 +61,12 @@
   }
   
   .header-title h1 {
+    display: inline-block;
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     color: #3e2723;
     margin: 0;
-    text-align: center;  /* Forza la centratura */
+    text-align: center;
   }
   
   .header-nav nav ul {
@@ -119,7 +121,7 @@
   
   .hero small {
     display: block;
-    font-size: 1em; /* Regola la dimensione come preferisci */
+    font-size: 1em;
     color: #666;
     margin-bottom: 10px;
   }
