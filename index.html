@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Country Charm & Jacuzzi</title>
+  <title>La Quercia Country Charm & Jacuzzi</title>
   <!-- Google Fonts: Playfair Display per i titoli e Roboto per i testi -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -12,7 +12,7 @@
   <!-- HEADER -->
   <header>
     <div class="container">
-      <h1>Country Charm & Jacuzzi</h1>
+      <h1>La Quercia Country Charm & Jacuzzi</h1>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -29,69 +29,63 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h2>Welcome to Tuscany</h2>
-      <p>Embrace the magic of the Tuscan countryside</p>
+      <small>Welcome to Cetona, Siena</small>
+      <p><em>Embrace the magic of the Tuscan countryside</em></p>
       <a href="#contact" class="btn">Contact us</a>
     </div>
   </section>
 
-  <!-- SEZIONE CHI SIAMO -->
+  <!-- CHI SIAMO -->
   <section id="about">
     <div class="container">
       <h2>Chi Siamo</h2>
       <p>
-        Immerso nel cuore della campagna Toscana, a due passi dal borgo di Cetona, "Country Charm & Jacuzzi" offre un'esperienza unica di eleganza e relax. 
+        Immerso nel cuore della Toscana, "La Quercia Country Charm & Jacuzzi" offre un'esperienza unica di eleganza e relax. 
         Il nostro casale unisce il fascino rustico con comfort moderni in un ambiente intimo e raffinato.
       </p>
     </div>
   </section>
 
-  <!-- SEZIONE SERVIZI -->
+  <!-- SERVIZI -->
   <section id="services">
     <div class="container">
       <h2>Servizi</h2>
       <ul class="services-list">
         <li>
-            <h3>Oasi di comfort</h3>
-            <p>Camere progettate per il massimo comfort ed eleganza. Tutte con bagno en suite.</p>
-          </li>
-          <li>
-            <h3>Jacuzzi Privata</h3>
-            <p>Immergiti nella nostra esclusiva jacuzzi, perfetta per rilassarsi in totale privacy. Spaziosa e confortevole, può accogliere fino a 6 persone.</p>
-          </li>
-          <li>
-            <h3>Cantina Privata</h3>
-            <p>Degustazioni su richiesta con selezionati vini locali in un ambiente raffinato.</p>
-          </li>
-          <li>
-            <h3>Dining en Plein Air</h3>
-            <p>Ampio tavolo sotto una pergola fiorita, con vista mozzafiato sulla campagna toscana per cene indimenticabili.</p>
-          </li>
-          <li>
-            <h3>Parcheggio Riservato</h3>
-            <p>Comodità e sicurezza con il nostro parcheggio privato coperto, a pochi passi dall'ingresso principale.</p>
-          </li>
+          <h3>Dimora Accogliente</h3>
+          <p>Camere progettate per il massimo comfort ed eleganza.</p>
+        </li>
+        <li>
+          <h3>Jacuzzi Privata</h3>
+          <p>Rilassati nella nostra elegante jacuzzi privata, perfetta per momenti di relax fino a sei persone.</p>
+        </li>
+        <li>
+          <h3>Cantina Privata</h3>
+          <p>Degustazioni su richiesta in una cantina raffinata, ideale per scoprire vini locali.</p>
+        </li>
       </ul>
     </div>
   </section>
 
-  <!-- SEZIONE GALLERIA -->
+  <!-- GALLERIA -->
   <section id="gallery">
     <div class="container">
       <h2>Galleria</h2>
       <div class="gallery-grid">
-        <img src="img/c4.avif" alt="Immagine 1">
-        <img src="img/c5.avif" alt="Immagine 2">
-        <img src="img/c6.avif" alt="Immagine 3">
-        <img src="img/c7.avif" alt="Immagine 4">
-        <img src="img/c8.avif" alt="Immagine 5">
-        <img src="img/cetoa3.avif" alt="Immagine 6">
-        <img src="img/cetona1.avif" alt="Immagine 7">
-        <img src="img/cetona2.avif" alt="Immagine 8">
+        <!-- Ogni immagine è cliccabile per aprire la lightbox -->
+        <img src="img/c4.avif" alt="Immagine 1" onclick="openModal(this.src)">
+        <img src="img/c5.avif" alt="Immagine 2" onclick="openModal(this.src)">
+        <img src="img/c6.avif" alt="Immagine 3" onclick="openModal(this.src)">
+        <img src="img/c7.avif" alt="Immagine 4" onclick="openModal(this.src)">
+        <img src="img/c8.avif" alt="Immagine 5" onclick="openModal(this.src)">
+        <img src="img/cetoa3.avif" alt="Immagine 6" onclick="openModal(this.src)">
+        <img src="img/cetona1.avif" alt="Immagine 7" onclick="openModal(this.src)">
+        <img src="img/cetona2.avif" alt="Immagine 8" onclick="openModal(this.src)">
       </div>
     </div>
   </section>
 
-  <!-- SEZIONE CONTATTI -->
+  <!-- CONTATTI -->
   <section id="contact">
     <div class="container">
       <h2>Contatti</h2>
@@ -102,8 +96,25 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Country Charm & Jacuzzi. Tutti i diritti riservati.</p>
+      <p>&copy; 2025 La Quercia Country Charm & Jacuzzi. Tutti i diritti riservati.</p>
     </div>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeModal()">
+    <span class="lightbox-close" onclick="closeModal()">&times;</span>
+    <img class="lightbox-content" id="modal-image" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- JavaScript per la Lightbox -->
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-image').src = src;
+      document.getElementById('lightbox-modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('lightbox-modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
