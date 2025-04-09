@@ -47,7 +47,7 @@
   
   /* HEADER */
   header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255,255,255,0.8);
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
   }
@@ -95,7 +95,7 @@
   }
   
   .hero-content {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255,255,255,0.85);
     padding: 40px 60px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -109,10 +109,17 @@
     color: #3e2723;
   }
   
-  .hero .tagline {
+  .hero small {
+    display: block;
+    font-size: 1em; /* Puoi aumentare leggermente se vuoi */
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
     font-size: 22px;
+    margin-bottom: 30px;
     color: #5d4037;
-    margin-bottom: 20px;
   }
   
   .btn {
@@ -254,12 +261,14 @@
     padding: 0 20px;
   }
   
-  .lightbox-nav .prev, .lightbox-nav .next {
+  .lightbox-nav .prev,
+  .lightbox-nav .next {
     cursor: pointer;
     transition: color 0.3s ease;
   }
   
-  .lightbox-nav .prev:hover, .lightbox-nav .next:hover {
+  .lightbox-nav .prev:hover,
+  .lightbox-nav .next:hover {
     color: #bbb;
   }
   

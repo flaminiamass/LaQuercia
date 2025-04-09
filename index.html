@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Country Charm & Jacuzzi</title>
+  <title>Country Charme & Jacuzzi</title>
   <!-- Google Fonts: Playfair Display per i titoli e Roboto per i testi -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -12,7 +12,7 @@
   <!-- HEADER -->
   <header>
     <div class="container">
-      <h1>Country Charm & Jacuzzi</h1>
+      <h1>Country Charme & Jacuzzi</h1>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -28,8 +28,9 @@
   <!-- HERO SECTION -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h2>Welcome to Cetona, Siena</h2>
-      <p class="tagline"><em>Experience the exquisite charm of Tuscany</em></p>
+      <h2>Welcome to Tuscany</h2>
+      <small>Welcome to Cetona, Siena</small>
+      <p><em>Embrace the magic of the Tuscan countryside</em></p>
       <a href="#contact" class="btn">Contact us</a>
     </div>
   </section>
@@ -39,7 +40,7 @@
     <div class="container">
       <h2>Chi Siamo</h2>
       <p>
-        Immerso nel cuore della Toscana, "Country Charm & Jacuzzi" offre un'esperienza unica di eleganza e relax. 
+        Immerso nel cuore della Toscana, "Country Charme & Jacuzzi" offre un'esperienza unica di eleganza e relax. 
         Il nostro casale unisce il fascino rustico con comfort moderni in un ambiente intimo e raffinato.
       </p>
     </div>
@@ -79,7 +80,7 @@
     <div class="container">
       <h2>Galleria</h2>
       <div class="gallery-grid">
-        <!-- Ogni immagine è cliccabile e contiene un data-index per la navigazione -->
+        <!-- Ogni immagine ha un data-index per la navigazione -->
         <img src="img/c4.avif" alt="Immagine 1" data-index="0" onclick="openModal(this)">
         <img src="img/c5.avif" alt="Immagine 2" data-index="1" onclick="openModal(this)">
         <img src="img/c6.avif" alt="Immagine 3" data-index="2" onclick="openModal(this)">
@@ -103,7 +104,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Country Charm & Jacuzzi. Tutti i diritti riservati.</p>
+      <p>&copy; 2025 Country Charme & Jacuzzi. Tutti i diritti riservati.</p>
     </div>
   </footer>
 
@@ -122,7 +123,7 @@
     let currentIndex = 0;
     let modalImages = [];
 
-    // Al caricamento della pagina, crea un array con i src delle immagini della galleria
+    // Quando la pagina è pronta, raccogli i src delle immagini nella galleria
     document.addEventListener('DOMContentLoaded', function() {
       const images = document.querySelectorAll('.gallery-grid img');
       modalImages = Array.from(images).map(img => img.src);
