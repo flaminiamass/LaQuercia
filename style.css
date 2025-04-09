@@ -39,6 +39,7 @@
     z-index: -1;
   }
   
+  /* CONTAINER */
   .container {
     width: 90%;
     max-width: 1200px;
@@ -52,35 +53,42 @@
     border-bottom: 1px solid #ddd;
   }
   
-  header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /* Header divise in due righe */
+  .header-title {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
   }
   
-  header h1 {
+  .header-title h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 32px;
     color: #3e2723;
+    margin: 0;
   }
   
-  header nav ul {
+  .header-nav nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
   }
   
-  header nav ul li {
-    margin-left: 20px;
+  .header-nav nav ul li {
+    margin: 0 10px;
   }
   
-  header nav ul li a {
+  .header-nav nav ul li a {
     text-decoration: none;
     color: #5d4037;
     font-weight: 500;
     transition: color 0.3s ease;
   }
   
-  header nav ul li a:hover {
+  .header-nav nav ul li a:hover {
     color: #3e2723;
   }
   
@@ -108,14 +116,12 @@
     font-size: 48px;
     margin-bottom: 10px;
     color: #3e2723;
-    white-space: nowrap; /* Impedisce l'andata a capo se possibile */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   .hero small {
     display: block;
-    font-size: 1em; /* Regola la dimensione come preferisci */
+    font-size: 1em;
     color: #666;
     margin-bottom: 10px;
   }
@@ -309,16 +315,11 @@
       padding: 0 10px;
     }
     
-    header h1 {
-      font-size: 20px;
+    .header-title h1 {
+      font-size: 24px;
     }
     
-    header nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    header nav ul li {
+    .header-nav nav ul li {
       margin: 5px 8px;
     }
     
@@ -330,7 +331,7 @@
     
     .hero h2 {
       font-size: 28px;
-      white-space: normal;  /* Permette l'andata a capo se necessario */
+      white-space: normal;
     }
     
     .hero small {
@@ -381,8 +382,8 @@
   
   /* MEDIA QUERIES PER DISPOSITIVI MOLTO PICCOLI */
   @media (max-width: 480px) {
-    header h1 {
-      font-size: 18px;
+    .header-title h1 {
+      font-size: 20px;
     }
     
     .hero h2 {
