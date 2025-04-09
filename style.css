@@ -111,12 +111,12 @@
   
   .hero small {
     display: block;
-    font-size: 1em; /* Puoi aumentare leggermente se vuoi */
+    font-size: 1em; /* Regola la dimensione come preferisci */
     color: #666;
     margin-bottom: 10px;
   }
   
-  .hero p {
+  .hero .tagline {
     font-size: 22px;
     margin-bottom: 30px;
     color: #5d4037;
