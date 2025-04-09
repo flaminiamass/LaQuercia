@@ -28,9 +28,8 @@
   <!-- HERO SECTION -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h2>Welcome to Tuscany</h2>
-      <small>Welcome to Cetona, Siena</small>
-      <p><em>Embrace the magic of the Tuscan countryside</em></p>
+      <h2>Welcome to Cetona, Siena</h2>
+      <p class="tagline"><em>Experience the exquisite charm of Tuscany</em></p>
       <a href="#contact" class="btn">Contact us</a>
     </div>
   </section>
@@ -52,16 +51,24 @@
       <h2>Servizi</h2>
       <ul class="services-list">
         <li>
-          <h3>Dimora Accogliente</h3>
-          <p>Camere progettate per il massimo comfort ed eleganza.</p>
+          <h3>Oasi di comfort</h3>
+          <p>Camere progettate per il massimo comfort ed eleganza. Tutte con bagno en suite.</p>
         </li>
         <li>
           <h3>Jacuzzi Privata</h3>
-          <p>Rilassati nella nostra elegante jacuzzi privata, perfetta per momenti di relax fino a sei persone.</p>
+          <p>Immergiti nella nostra lussuosa jacuzzi, perfetta per rilassarsi in totale privacy. Spaziosa e confortevole, può accogliere fino a 6 persone.</p>
         </li>
         <li>
           <h3>Cantina Privata</h3>
-          <p>Degustazioni su richiesta in una cantina raffinata, ideale per scoprire vini locali.</p>
+          <p>Degustazioni su richiesta con selezionati vini locali in un ambiente raffinato.</p>
+        </li>
+        <li>
+          <h3>Dining en Plein Air</h3>
+          <p>Ampio tavolo sotto una pergola fiorita, con vista mozzafiato sulla campagna toscana per cene indimenticabili.</p>
+        </li>
+        <li>
+          <h3>Parcheggio Riservato</h3>
+          <p>Comodità e sicurezza con il nostro parcheggio privato coperto, a pochi passi dall'ingresso principale.</p>
         </li>
       </ul>
     </div>
@@ -72,15 +79,15 @@
     <div class="container">
       <h2>Galleria</h2>
       <div class="gallery-grid">
-        <!-- Ogni immagine è cliccabile per aprire la lightbox -->
-        <img src="img/c4.avif" alt="Immagine 1" onclick="openModal(this.src)">
-        <img src="img/c5.avif" alt="Immagine 2" onclick="openModal(this.src)">
-        <img src="img/c6.avif" alt="Immagine 3" onclick="openModal(this.src)">
-        <img src="img/c7.avif" alt="Immagine 4" onclick="openModal(this.src)">
-        <img src="img/c8.avif" alt="Immagine 5" onclick="openModal(this.src)">
-        <img src="img/cetoa3.avif" alt="Immagine 6" onclick="openModal(this.src)">
-        <img src="img/cetona1.avif" alt="Immagine 7" onclick="openModal(this.src)">
-        <img src="img/cetona2.avif" alt="Immagine 8" onclick="openModal(this.src)">
+        <!-- Ogni immagine è cliccabile e contiene un data-index per la navigazione -->
+        <img src="img/c4.avif" alt="Immagine 1" data-index="0" onclick="openModal(this)">
+        <img src="img/c5.avif" alt="Immagine 2" data-index="1" onclick="openModal(this)">
+        <img src="img/c6.avif" alt="Immagine 3" data-index="2" onclick="openModal(this)">
+        <img src="img/c7.avif" alt="Immagine 4" data-index="3" onclick="openModal(this)">
+        <img src="img/c8.avif" alt="Immagine 5" data-index="4" onclick="openModal(this)">
+        <img src="img/cetoa3.avif" alt="Immagine 6" data-index="5" onclick="openModal(this)">
+        <img src="img/cetona1.avif" alt="Immagine 7" data-index="6" onclick="openModal(this)">
+        <img src="img/cetona2.avif" alt="Immagine 8" data-index="7" onclick="openModal(this)">
       </div>
     </div>
   </section>
@@ -100,20 +107,48 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-modal" onclick="closeModal()">
-    <span class="lightbox-close" onclick="closeModal()">&times;</span>
+  <!-- Lightbox Modal con navigazione -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeModal(event)">
+    <span class="lightbox-close" onclick="closeModal(event)">&times;</span>
     <img class="lightbox-content" id="modal-image" onclick="event.stopPropagation()">
+    <div class="lightbox-nav">
+      <span class="prev" onclick="prevImage(event)">&#10094;</span>
+      <span class="next" onclick="nextImage(event)">&#10095;</span>
+    </div>
   </div>
 
-  <!-- JavaScript per la Lightbox -->
+  <!-- JavaScript per la Lightbox con navigazione -->
   <script>
-    function openModal(src) {
-      document.getElementById('modal-image').src = src;
+    let currentIndex = 0;
+    let modalImages = [];
+
+    // Al caricamento della pagina, crea un array con i src delle immagini della galleria
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.gallery-grid img');
+      modalImages = Array.from(images).map(img => img.src);
+    });
+
+    function openModal(elem) {
+      currentIndex = parseInt(elem.getAttribute('data-index'));
+      document.getElementById('modal-image').src = modalImages[currentIndex];
       document.getElementById('lightbox-modal').style.display = 'block';
     }
-    function closeModal() {
+
+    function closeModal(event) {
+      event.stopPropagation();
       document.getElementById('lightbox-modal').style.display = 'none';
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % modalImages.length;
+      document.getElementById('modal-image').src = modalImages[currentIndex];
+    }
+
+    function prevImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + modalImages.length) % modalImages.length;
+      document.getElementById('modal-image').src = modalImages[currentIndex];
     }
   </script>
 </body>

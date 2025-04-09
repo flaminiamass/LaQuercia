@@ -109,17 +109,10 @@
     color: #3e2723;
   }
   
-  .hero small {
-    display: block;
-    font-size: 0.8em;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .hero p {
+  .hero .tagline {
     font-size: 22px;
-    margin-bottom: 30px;
     color: #5d4037;
+    margin-bottom: 20px;
   }
   
   .btn {
@@ -247,6 +240,27 @@
   .lightbox-close:focus {
     color: #bbb;
     text-decoration: none;
+  }
+  
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 40px;
+    user-select: none;
+    padding: 0 20px;
+  }
+  
+  .lightbox-nav .prev, .lightbox-nav .next {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .lightbox-nav .prev:hover, .lightbox-nav .next:hover {
+    color: #bbb;
   }
   
   /* CONTATTI */
