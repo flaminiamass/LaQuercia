@@ -53,12 +53,9 @@
     border-bottom: 1px solid #ddd;
   }
   
-  /* Header divise in due righe */
+  /* DIVISIONE DELL'HEADER IN DUE RIGHE */
   .header-title {
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-bottom: 5px;
   }
   
@@ -67,6 +64,7 @@
     font-size: 32px;
     color: #3e2723;
     margin: 0;
+    text-align: center;  /* Forza la centratura */
   }
   
   .header-nav nav ul {
@@ -121,7 +119,7 @@
   
   .hero small {
     display: block;
-    font-size: 1em;
+    font-size: 1em; /* Regola la dimensione come preferisci */
     color: #666;
     margin-bottom: 10px;
   }
