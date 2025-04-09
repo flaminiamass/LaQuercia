@@ -1,6 +1,4 @@
-/* ======================
-   RESET & BASE STYLES
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +7,14 @@
   
   body {
     font-family: 'Roboto', sans-serif;
-    color: #3e2723;
+    line-height: 1.6;
+    color: #333;
+    background: #fdfaf6;
     position: relative;
     min-height: 100vh;
-    background: #fdfaf6; /* colore di fallback */
   }
   
-  /* Sfondo principale con immagine sfocata */
+  /* SFONDO CON IMMAGINE SFOCATA */
   body::before {
     content: "";
     position: fixed;
@@ -29,7 +28,6 @@
     z-index: -2;
   }
   
-  /* Sovrapposizione leggera per aumentare la leggibilità */
   body::after {
     content: "";
     position: fixed;
@@ -37,36 +35,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     z-index: -1;
   }
   
-  /* Contenitore principale */
   .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
   }
   
   /* HEADER */
   header {
     background: rgba(255, 255, 255, 0.8);
     padding: 20px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
   }
   
-  .header-container {
+  header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
   }
   
   header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
-    letter-spacing: 1px;
     color: #3e2723;
   }
   
@@ -76,14 +70,14 @@
   }
   
   header nav ul li {
-    margin-left: 25px;
+    margin-left: 20px;
   }
   
   header nav ul li a {
     text-decoration: none;
+    color: #5d4037;
     font-weight: 500;
     transition: color 0.3s ease;
-    color: #5d4037;
   }
   
   header nav ul li a:hover {
@@ -97,7 +91,6 @@
     justify-content: center;
     min-height: 80vh;
     text-align: center;
-    position: relative;
     padding: 20px;
   }
   
@@ -128,7 +121,6 @@
     background: #5d4037;
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
     border-radius: 5px;
     transition: background 0.3s ease;
   }
@@ -137,94 +129,81 @@
     background: #3e2723;
   }
   
-  /* SECTION BASE */
-  .section {
-    padding: 80px 0;
+  /* SEZIONI */
+  section {
+    padding: 60px 0;
+    text-align: center;
   }
   
-  .section h2 {
+  section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
-    text-align: center;
     margin-bottom: 30px;
     color: #3e2723;
   }
   
-  .section p {
+  section p {
     font-size: 18px;
-    line-height: 1.7;
-    color: #4e342e;
     max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto 20px;
+    color: #444;
   }
   
   /* SERVIZI */
-  .services {
+  .services-list {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
     justify-content: center;
-    margin-top: 40px;
+    gap: 20px;
   }
   
-  .service-item {
+  .services-list li {
     background: rgba(255,255,255,0.9);
-    padding: 30px;
-    width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 300px;
     transition: transform 0.3s ease;
   }
   
-  .service-item:hover {
+  .services-list li:hover {
     transform: translateY(-5px);
   }
   
-  .service-item h3 {
+  .services-list h3 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     margin-bottom: 15px;
     color: #3e2723;
   }
   
-  .service-item p {
-    font-size: 16px;
+  .services-list p {
     color: #5d4037;
   }
   
   /* GALLERIA */
-  .gallery {
+  .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-top: 40px;
   }
   
-  .gallery img {
+  .gallery-grid img {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
   }
   
-  .gallery img:hover {
+  .gallery-grid img:hover {
     transform: scale(1.03);
   }
   
   /* CONTATTI */
-  .contact-container {
-    text-align: center;
-  }
-  
-  .contact-container p {
-    margin-bottom: 15px;
-    font-size: 18px;
-  }
-  
-  .contact-email {
-    font-size: 20px;
+  #contact a {
     color: #5d4037;
     text-decoration: none;
     font-weight: 500;
@@ -232,7 +211,7 @@
     transition: border-bottom 0.3s ease;
   }
   
-  .contact-email:hover {
+  #contact a:hover {
     border-bottom: 1px solid #5d4037;
   }
   
@@ -240,11 +219,11 @@
   footer {
     background: rgba(255,255,255,0.8);
     padding: 20px 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid #ddd;
     text-align: center;
   }
   
-  .footer-container p {
+  footer p {
     font-size: 14px;
     color: #5d4037;
   }
